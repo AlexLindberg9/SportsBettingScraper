@@ -164,17 +164,11 @@ bovada_driver.close()
 # BETUS SCRAPER
 
 betus_html = requests.get('https://www.betus.com.pa/sportsbook/baseball/mlb/').text
-
 betus = BeautifulSoup(betus_html, 'lxml') 
-
 bu_dict = {}
-
 bu_games = betus.find_all('div', class_ = 'normal')
-
 bu_teams = []
-
 bu_ml = []
-
 # add teams and moneylines to respective sets 
 for game in bu_games:
     away_team = game.find('span', id = 'awayName')
